@@ -2,8 +2,8 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 var now = dayjs();
-dayjs('dddd, MMMM D, YYYY h:mm A').format;
-$('#currentDay') = dayjs();
+var currentDate = dayjs('2022-11-12').format('dddd, MMMM D YYYY, h:mm:ss a');;
+$('#currentDay').text(currentDate); 
 
 
 $(function () {
