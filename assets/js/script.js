@@ -1,17 +1,9 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-var now = document.querySelector('#currentDay')
-
 var now = dayjs();
-dayjs.duration({
-  seconds: 1,
-  minutes: 2,
-  hours: 3,
-  days: 4,
-  months: 6,
-  years: 7
-}).format('YYYY-MM-DDTHH:mm:ss')
+dayjs('dddd, MMMM D, YYYY h:mm A').format;
+$('#currentDay') = dayjs();
 
 
 $(function () {
@@ -34,3 +26,4 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+
