@@ -1,16 +1,25 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-var now = dayjs();
-var currentDate = now.format('dddd, MMMM D YYYY');;
-currentTime = now.format('H:mm:ss');
-$('#currentDay').text(currentDate).text(currentTime);
+// var now = dayjs();
+// var currentDate = now.format('dddd, MMMM D YYYY');;
+// currentTime = now.format('H:mm:ss');
+// $('#currentDay').text(currentDate);
+
+let date = dayjs().format('dddd-MMM-YYYY HH:mm:ss');
+
+console.log('test', date);
+
+// setInterval(() => console.log(new Date().toLocaleTimeString(),1000));
+
+$('#currentDay').text(date);
 
 
 
+var todayTask = [];
 
 
-$(function () {
+// $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -18,9 +27,6 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
 
-
-
-  
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
@@ -32,5 +38,14 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
+// });
 
+var todayTask = { 'one': 1, 'two': 2, 'three': 3 };
+
+// Put the object into storage
+localStorage.setItem('todayTask', JSON.stringify(todayTask));
+
+// Retrieve the object from storage
+var retrievedObject = localStorage.getItem('todayTask');
+
+console.log('retrievedObject: ', JSON.parse(retrievedObject));
